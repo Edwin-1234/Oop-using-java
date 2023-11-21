@@ -5,7 +5,7 @@ class sumofintegers
     public static void main(String[] args) throws IOException
     {
         BufferedReader rde=new BufferedReader(new InputStreamReader(System.in));
-        System .out.println("ENter a line of integers");
+        System .out.println("Enter a line of integers seprated by space");
         String num=rde.readLine();
         StringTokenizer t=new StringTokenizer(num);
         int sum=0;
