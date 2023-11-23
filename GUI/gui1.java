@@ -1,5 +1,5 @@
 import javax.swing.*;
-public class gui extends JFrame
+public class gui1 extends JFrame
 {
     public static void main(String[] args) 
     {
