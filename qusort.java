@@ -1,28 +1,13 @@
 import java.io.*;
 import java.util.*;
-class Main
+class qsort
 {
-    public static void main(String[] args) throws IOException
+    String nam[];
+    int l,h;
+    void qusort(String nam[],int l,int h)
     {
-        Scanner rd=new Scanner(System.in);
-        System.out.println("Enter the number of names");
-        int n=rd.nextInt();
-        rd.nextLine(); 
-        String names[]=new String[n];
-        System.out.println("Enter the names");
-        for(int i=0;i<n;i++)
-        {
-            names[i]=rd.nextLine();
-        }
-        quicks(names,0,n-1);
-        System.out.println("Sorted order");
-        for(int i=0;i<n;i++)
-        {
-            System.out.println(names[i]+" ");
-        }
-    }
-    static void quicks(String nam[],int l,int h)
-    {
+        this.nam=nam;
+        this.l=l;this.h=h;
         int i=l,j=h;
         int mid=(int)(l+(h-l)/2);
         String pi=nam[mid];
@@ -46,11 +31,35 @@ class Main
         }
         if(l<j)
         {
-            quicks(nam,l,j);
+            qusort(nam,l,j);
         }
         if(i<h)
         {
-            quicks(nam,i,h);
+            qusort(nam,i,h);
+        }
+    } 
+}
+    
+class Main
+{
+    public static void main(String[] args) throws IOException
+    {
+        Scanner rd=new Scanner(System.in);
+        System.out.println("Enter the number of names");
+        int n=rd.nextInt();
+        rd.nextLine(); 
+        String names[]=new String[n];
+        System.out.println("Enter the names");
+        for(int i=0;i<n;i++)
+        {
+            names[i]=rd.nextLine();
+        }
+        qsort q=new qsort();
+        q.qusort(names,0,n-1);
+        System.out.println("Sorted order");
+        for(int i=0;i<n;i++)
+        {
+            System.out.println(names[i]+" ");
         }
     } 
 }
